@@ -8,7 +8,7 @@ using UnityEngine;
 // MeshFilter component on the same game object. If it doesn't exist, the Unity
 // engine will create one automatically.
 [RequireComponent(typeof(MeshFilter))]
-public class GenerateCube : MonoBehaviour
+public class GeneratePyramid : MonoBehaviour
 {
     private void Start()
     {
@@ -37,14 +37,6 @@ public class GenerateCube : MonoBehaviour
         // depends on the way the mesh surface itself is defined (step 3).
         mesh.SetVertices(new[]
         {
-            // Top face
-            new Vector3(-1.0f, 1.0f, -1.0f),
-            new Vector3(-1.0f, 1.0f, 1.0f),
-            new Vector3(1.0f, 1.0f, 1.0f),
-            
-            new Vector3(-1.0f, 1.0f, -1.0f),
-            new Vector3(1.0f, 1.0f, 1.0f),
-            new Vector3(1.0f, 1.0f, -1.0f),
 
             // Bottom face
             new Vector3(-1.0f, -1.0f, -1.0f),
@@ -56,40 +48,24 @@ public class GenerateCube : MonoBehaviour
             new Vector3(1.0f, -1.0f, 1.0f),
 
             // Left face
-            new Vector3(-1.0f, -1.0f, -1.0f),
             new Vector3(-1.0f, -1.0f, 1.0f),
-            new Vector3(-1.0f, 1.0f, 1.0f),
-            
+            new Vector3(0f, 1.0f, 0f),
             new Vector3(-1.0f, -1.0f, -1.0f),
-            new Vector3(-1.0f, 1.0f, 1.0f),
-            new Vector3(-1.0f, 1.0f, -1.0f),
 
             // Right face
             new Vector3(1.0f, -1.0f, -1.0f),
-            new Vector3(1.0f, 1.0f, 1.0f),
+            new Vector3(0f, 1.0f, 0f),
             new Vector3(1.0f, -1.0f, 1.0f),
-            
-            new Vector3(1.0f, -1.0f, -1.0f),
-            new Vector3(1.0f, 1.0f, -1.0f),
-            new Vector3(1.0f, 1.0f, 1.0f),
 
             // Front face
             new Vector3(1.0f, -1.0f, 1.0f),
-            new Vector3(1.0f, 1.0f, 1.0f),
-            new Vector3(-1.0f, 1.0f, 1.0f),
-            
-            new Vector3(-1.0f, 1.0f, 1.0f),
+            new Vector3(0f, 1.0f, 0f),
             new Vector3(-1.0f, -1.0f, 1.0f),
-            new Vector3(1.0f, -1.0f, 1.0f),
 
             // Back face
             new Vector3(1.0f, -1.0f, -1.0f),
-            new Vector3(1.0f, 1.0f, -1.0f),
-            new Vector3(-1.0f, 1.0f, -1.0f),
-            
-            new Vector3(-1.0f, 1.0f, -1.0f),
-            new Vector3(-1.0f, -1.0f, -1.0f),
-            new Vector3(1.0f, -1.0f, -1.0f)
+            new Vector3(0f, 1.0f, 0f),
+            new Vector3(-1.0f, -1.0f, -1.0f)
         });
 
         // Step 2: Define the vertex colours. There is a one-to-one index
@@ -97,59 +73,34 @@ public class GenerateCube : MonoBehaviour
         // so the length of both arrays must be the same.
         mesh.SetColors(new[]
         {
-            // Top face
-            Color.red,
-            Color.red,
-            Color.red,
-            
-            Color.red,
-            Color.red,
-            Color.red,
-
             // Bottom face
             Color.red,
             Color.red,
             Color.red,
-            
+
             Color.red,
             Color.red,
             Color.red,
 
             // Left face
-            Color.yellow, 
-            Color.yellow,
-            Color.yellow,
-            
             Color.yellow,
             Color.yellow,
             Color.yellow,
 
             // Right face
-            Color.yellow, 
-            Color.yellow,
-            Color.yellow,
-            
-            Color.yellow, 
-            Color.yellow,
-            Color.yellow,
+            Color.green, 
+            Color.green,
+            Color.green,
             
             // Front face
-            Color.blue, 
-            Color.blue,
-            Color.blue,
-            
             Color.blue,
             Color.blue,
             Color.blue,
 
             // Back face
-            Color.blue, 
-            Color.blue,
-            Color.blue,
-            
-            Color.blue,
-            Color.blue,
-            Color.blue
+            Color.black, 
+            Color.black,
+            Color.black,
         });
 
         // Step 3: Define the indices. The indices "connect" vertices together
